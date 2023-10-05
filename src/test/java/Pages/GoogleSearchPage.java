@@ -7,6 +7,7 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import org.testng.Reporter;
 
 import chromedriver.SetWebDriver;
 
@@ -26,14 +27,9 @@ public class GoogleSearchPage extends AbstractPage {
 		WebElement _inputFieldElement = WaitElementByLocator(inputField);
 		if (_inputFieldElement != null) {
 			_inputFieldElement.clear();
+			_inputFieldElement.sendKeys(_string);
 
-			for (int i = 0; i < _string.length(); i++) {
-				char c = _string.charAt(i);
-				String s = new StringBuilder().append(c).toString();
-				_inputFieldElement.sendKeys(s);
-			}
 		}
-
 	}
 	
 	public void clearInput() {
@@ -52,28 +48,26 @@ public class GoogleSearchPage extends AbstractPage {
 		}
 	}
 
-	public List<WebElement> WebElementList(By _by) {
-		List<WebElement> listElements = webDriver.getWebDriver().findElements(By.xpath("//ul[@role='listbox']/li"));
-
-		List<WebElement> _filteredElements = new ArrayList<>();
+	public List<String> WebElementList(By _by) {
+		List<WebElement> listElements = webDriver.getWebDriver().findElements(_by);
+		List<String> _filteredElements = new ArrayList<>();
 		for (WebElement element : listElements) {
-			System.out.println(element.getText());
-			String classes = element.getAttribute("class");
-			String role = element.getAttribute("role");
-			if ((classes.contains("sbct") || classes.contains("sbct sbre")) && "presentation".equals(role)) {
-				_filteredElements.add(element);
-				System.out.println(element.getText());
-			}
-			 _filteredElements.clear();
+			_filteredElements.add(element.getText());
+			
 		}
+		
+		
 		return _filteredElements;
 	}
 	
-	public void CompareList(List<WebElement> _list1,List<WebElement> _list2) {
-		for (WebElement elemento1 : _list1) {
-		    for (WebElement elemento2 : _list2) {
-		        Assert.assertNotEquals(elemento1.getText(), elemento2.getText(), "Se encontró un elemento equivalente"+elemento1.getText()+elemento2.getText());
+	public void CompareList(List<String> _list1,List<String> _list2) {
+		for (String elemento1 : _list1) {
+
+		    for (String elemento2 : _list2) {
+
+		        Assert.assertNotEquals(elemento1, elemento2, "Se encontró un elemento equivalente"+elemento1+elemento2);
 		    }
 		}
+
 	}
 }

@@ -6,16 +6,19 @@ import Pages.GoogleResultPage;
 import Pages.GoogleSearchPage;
 import Pages.StoreSteamPoweredPage;
 import chromedriver.SetWebDriver;
-
 import org.testng.annotations.BeforeTest;
 
 import java.io.IOException;
+import java.time.Duration;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.openqa.selenium.By;
-
-import org.openqa.selenium.WebElement;
-
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.testng.Assert;
+import org.testng.Reporter;
 import org.testng.annotations.AfterTest;
 
 public class Tests {
@@ -23,15 +26,38 @@ public class Tests {
 	GoogleSearchPage googleSearchPage;
 	GoogleResultPage googleResultPage;
 	StoreSteamPoweredPage storeSteamPoweredPage;
-	By classNameImage= By.xpath("//ul[@role='listbox']/li");
+
+	By autoLocator= By.cssSelector("[jsaction=\"click:.CLIENT;mouseover:.CLIENT\"]");
+	
   @Test
   public void f() throws InterruptedException {
 	  
 	  googleSearchPage.SendKeysOnInput("auto");
-	  List<WebElement> _autolist = googleSearchPage.WebElementList(classNameImage);
+	  googleSearchPage.GetWebDriver().until(ExpectedConditions.visibilityOfElementLocated(autoLocator));
+	  
+	  List<String> _autolist = new ArrayList<>();
+	  _autolist = googleSearchPage.WebElementList(autoLocator);
 	  googleSearchPage.clearInput();
+	  
+	  googleSearchPage.GetWebDriver().until(ExpectedConditions.visibilityOfElementLocated(autoLocator));
+	  
 	  googleSearchPage.SendKeysOnInput("automation");
-	  List<WebElement> _automationlist = googleSearchPage.WebElementList(classNameImage);
+	  
+	  List<String> _automationlist = new ArrayList<>();
+
+	  Thread.sleep(Duration.ofMillis(1000));
+	  _automationlist = googleSearchPage.WebElementList(autoLocator);
+	  googleSearchPage.GetWebDriver().until(ExpectedConditions.visibilityOfElementLocated(autoLocator));
+	  
+	 
+	  
+	  Assert.assertNotEquals(_autolist, _automationlist, _autolist.size()+"auto list tiene automationlist tiene"+ _automationlist.size());
+	  for(String _Auto : _autolist) {
+		  Reporter.log("_auto tiene un elemento: "+_Auto);
+	  }
+	  for(String _automation : _automationlist) {
+		  Reporter.log("_automation tiene un elemento: "+_automation);
+	  }
 	  googleSearchPage.CompareList(_autolist, _automationlist);
 	  googleSearchPage.ClickOnElementWithImage();
 	  googleResultPage.ClickOnNResult();
@@ -41,7 +67,9 @@ public class Tests {
   }
   @BeforeTest
   public void beforeTest() throws IOException {
+	  
 	  webDriver = new SetWebDriver();
+	  
 	  webDriver.getWebDriver().manage().window().maximize();
 	  googleSearchPage = new GoogleSearchPage(webDriver);
 	  googleResultPage = new GoogleResultPage(webDriver);
@@ -51,6 +79,7 @@ public class Tests {
 
   @AfterTest
   public void afterTest() {
+	  webDriver.getWebDriver().quit();
   }
 
 }

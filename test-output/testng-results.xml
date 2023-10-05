@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+    <line>
+      <![CDATA[_auto tiene un elemento: auto de milei]]>
+    </line>
+    <line>
+      <![CDATA[_auto tiene un elemento: autos usados]]>
+    </line>
+    <line>
+      <![CDATA[_auto tiene un elemento: autos]]>
+    </line>
+    <line>
+      <![CDATA[_auto tiene un elemento: autos usados bahia blanca]]>
+    </line>
+    <line>
+      <![CDATA[_auto tiene un elemento: autos usados bahia]]>
+    </line>
+    <line>
+      <![CDATA[_auto tiene un elemento: autoclasica 2023]]>
+    </line>
+    <line>
+      <![CDATA[_auto tiene un elemento: autodromo galvez
+Autódromo Óscar y Juan Gálvez · Buenos Aires]]>
+    </line>
+    <line>
+      <![CDATA[_auto tiene un elemento: autoblog]]>
+    </line>
+    <line>
+      <![CDATA[_auto tiene un elemento: autocad]]>
+    </line>
+    <line>
+      <![CDATA[_auto tiene un elemento: autocosmos]]>
+    </line>
+    <line>
+      <![CDATA[_automation tiene un elemento: Automation
+Videojuego]]>
+    </line>
+    <line>
+      <![CDATA[_automation tiene un elemento: Automation Anywhere]]>
+    </line>
+    <line>
+      <![CDATA[_automation tiene un elemento: automation studio]]>
+    </line>
+    <line>
+      <![CDATA[_automation tiene un elemento: automation meaning]]>
+    </line>
+    <line>
+      <![CDATA[_automation tiene un elemento: automation testing]]>
+    </line>
+    <line>
+      <![CDATA[_automation tiene un elemento: Automation Empire
+Videojuego]]>
+    </line>
+    <line>
+      <![CDATA[_automation tiene un elemento: automation traductor]]>
+    </line>
+    <line>
+      <![CDATA[_automation tiene un elemento: automationpractice]]>
+    </line>
+    <line>
+      <![CDATA[_automation tiene un elemento: Automation - The Car Company Tycoon Game
+Videojuego]]>
+    </line>
+    <line>
+      <![CDATA[_automation tiene un elemento: Automation Systems SA
+Servicio de seguridad privada · San Martín, Provincia de Buenos Aires]]>
+    </line>
+  </reporter-output>
+  <suite started-at="2023-10-05T19:30:14 ART" name="Default suite" finished-at="2023-10-05T19:30:25 ART" duration-ms="11644">
+    <groups>
+    </groups>
+    <test started-at="2023-10-05T19:30:14 ART" name="Default test" finished-at="2023-10-05T19:30:25 ART" duration-ms="11644">
+      <class name="Tests.Tests">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:Tests.Tests@367ffa75]" started-at="2023-10-05T19:30:14 ART" name="beforeTest" finished-at="2023-10-05T19:30:16 ART" duration-ms="2135" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method signature="f()[pri:0, instance:Tests.Tests@367ffa75]" started-at="2023-10-05T19:30:16 ART" name="f" finished-at="2023-10-05T19:30:25 ART" duration-ms="9363" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[_auto tiene un elemento: auto de milei]]>
+            </line>
+            <line>
+              <![CDATA[_auto tiene un elemento: autos usados]]>
+            </line>
+            <line>
+              <![CDATA[_auto tiene un elemento: autos]]>
+            </line>
+            <line>
+              <![CDATA[_auto tiene un elemento: autos usados bahia blanca]]>
+            </line>
+            <line>
+              <![CDATA[_auto tiene un elemento: autos usados bahia]]>
+            </line>
+            <line>
+              <![CDATA[_auto tiene un elemento: autoclasica 2023]]>
+            </line>
+            <line>
+              <![CDATA[_auto tiene un elemento: autodromo galvez
+Autódromo Óscar y Juan Gálvez · Buenos Aires]]>
+            </line>
+            <line>
+              <![CDATA[_auto tiene un elemento: autoblog]]>
+            </line>
+            <line>
+              <![CDATA[_auto tiene un elemento: autocad]]>
+            </line>
+            <line>
+              <![CDATA[_auto tiene un elemento: autocosmos]]>
+            </line>
+            <line>
+              <![CDATA[_automation tiene un elemento: Automation
+Videojuego]]>
+            </line>
+            <line>
+              <![CDATA[_automation tiene un elemento: Automation Anywhere]]>
+            </line>
+            <line>
+              <![CDATA[_automation tiene un elemento: automation studio]]>
+            </line>
+            <line>
+              <![CDATA[_automation tiene un elemento: automation meaning]]>
+            </line>
+            <line>
+              <![CDATA[_automation tiene un elemento: automation testing]]>
+            </line>
+            <line>
+              <![CDATA[_automation tiene un elemento: Automation Empire
+Videojuego]]>
+            </line>
+            <line>
+              <![CDATA[_automation tiene un elemento: automation traductor]]>
+            </line>
+            <line>
+              <![CDATA[_automation tiene un elemento: automationpractice]]>
+            </line>
+            <line>
+              <![CDATA[_automation tiene un elemento: Automation - The Car Company Tycoon Game
+Videojuego]]>
+            </line>
+            <line>
+              <![CDATA[_automation tiene un elemento: Automation Systems SA
+Servicio de seguridad privada · San Martín, Provincia de Buenos Aires]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- f -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:Tests.Tests@367ffa75]" started-at="2023-10-05T19:30:25 ART" name="afterTest" finished-at="2023-10-05T19:30:25 ART" duration-ms="122" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- Tests.Tests -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

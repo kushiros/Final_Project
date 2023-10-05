@@ -1,6 +1,7 @@
 package Pages;
 
 import java.time.Duration;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Function;
 
@@ -55,20 +56,7 @@ public abstract class AbstractPage {
 
 	}
 
-	public List<WebElement> WaitElementListByLocator(final By _byLocator) {
 
-		List<WebElement> _listWebElements = GetWebDriver().until(new Function<WebDriver, List<WebElement>>() {
-			public List<WebElement> apply(WebDriver driver) {
-				List<WebElement> _elements = driver.findElements(_byLocator);
-				for (@SuppressWarnings("unused")
-				WebElement _element : _elements) {
-				}
-				return _elements;
-			}
-		});
-		return _listWebElements;
-
-	}
 
 
 	public WebDriverWait getExplicitWait() {
