@@ -56,13 +56,13 @@ public class GoogleSearchPage extends AbstractPage {
 		List<WebElement> listElements = webDriver.getWebDriver().findElements(By.xpath("//ul[@role='listbox']/li"));
 
 		List<WebElement> _filteredElements = new ArrayList<>();
-		System.out.println("aaaaaa");
 		for (WebElement element : listElements) {
+			System.out.println(element.getText());
 			String classes = element.getAttribute("class");
 			String role = element.getAttribute("role");
 			if ((classes.contains("sbct") || classes.contains("sbct sbre")) && "presentation".equals(role)) {
 				_filteredElements.add(element);
-				
+				System.out.println(element.getText());
 			}
 			 _filteredElements.clear();
 		}

@@ -34,7 +34,7 @@ public class Tests {
 	  List<WebElement> _automationlist = googleSearchPage.WebElementList(classNameImage);
 	  googleSearchPage.CompareList(_autolist, _automationlist);
 	  googleSearchPage.ClickOnElementWithImage();
-	  googleResultPage.ClickOnNResult(0);
+	  googleResultPage.ClickOnNResult();
 	  storeSteamPoweredPage.confirmActualURL();
 	  
 

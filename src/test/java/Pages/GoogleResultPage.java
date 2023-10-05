@@ -14,11 +14,11 @@ public class GoogleResultPage extends AbstractPage{
 
 	By allResults = By.className("yuRUbf");
 	
-	public void ClickOnNResult(int n) {
+	public void ClickOnNResult() {
 		WebElement _clickNElement = WaitElementByLocator(allResults);
-		WebElement _click = _clickNElement;
+	
 		if(_clickNElement != null) {
-			_click.click();
+			_clickNElement.click();
 		}
 	}
 }
