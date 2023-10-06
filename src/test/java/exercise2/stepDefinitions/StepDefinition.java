@@ -31,22 +31,7 @@ public class StepDefinition {
 		DemoblazeCartPage = new DemoBlazeCartPage(webDriver);
 	}
 
-	@When("I click on the product with ID {string}")
-	public void i_click_on_the_product_with_id(String idString) {
-		int id = Integer.parseInt(idString);
-		DemoblazeHomePage.ClickOnElementID(id);
-	}
 
-	@Then("I go to the product details page")
-	public void i_go_to_the_product_details_page() {
-
-	}
-
-	@When("I click on the Add to Cart button")
-	public void i_click_on_the_button() {
-		DemoblazeProductPage.generalClick(DemoblazeProductPage.GetAddToCart());
-		DemoblazeProductPage.checkAlert();
-	}
 
 	@Then("I go to the Cart Page")
 	public void i_go_to_the_cart_page() {
@@ -65,7 +50,7 @@ public class StepDefinition {
 		DemoblazeCartPage.generalClick(DemoblazeCartPage.GetPurchaseBy());
 	}
 
-	@Then("I compare the data")
+	@Then("I should see the purchase information")
 	public void i_compare_the_data() {
 		DemoblazeCartPage.checkData();
 	}
