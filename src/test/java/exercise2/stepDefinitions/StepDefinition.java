@@ -10,6 +10,7 @@ import exercise2.POM.DemoBlazeHomePage;
 import exercise2.POM.DemoBlazeProductPage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -21,6 +22,8 @@ public class StepDefinition {
 	DemoBlazeHomePage DemoblazeHomePage;
 	DemoBlazeProductPage DemoblazeProductPage;
 	DemoBlazeCartPage DemoblazeCartPage;
+	
+	
 
 	@Given("As a user I am on {string}")
 	public void as_a_user_i_am_on(String string) throws IOException {
@@ -40,6 +43,7 @@ public class StepDefinition {
 
 	@When("I click on {string} and fill in the data {string} {string}:")
 	public void i_click_on_and_fill_in_the_data(String string, String name, String creditCard) {
+		DemoblazeCartPage.CheckProducts(DemoblazeProductPage.getStringList());
 		DemoblazeCartPage.generalClick(DemoblazeCartPage.GetPlaceOrderBy());
 		DemoblazeCartPage.SetName(name);
 		DemoblazeCartPage.SetCreditCard(creditCard);
@@ -76,7 +80,7 @@ public class StepDefinition {
 					}
 					
 					DemoblazeHomePage.ClickOnElementID(id);
-
+					DemoblazeProductPage.addList((DemoblazeProductPage.getNameOfProduct()));
 					DemoblazeProductPage.generalClick(DemoblazeProductPage.GetAddToCart());
 					DemoblazeProductPage.checkAlert();
 					DemoblazeProductPage.generalClick(DemoblazeProductPage.GetHomeLogoBy());

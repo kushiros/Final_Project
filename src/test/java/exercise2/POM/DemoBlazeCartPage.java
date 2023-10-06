@@ -16,6 +16,7 @@ public class DemoBlazeCartPage extends DemoBlazeGeneralPage{
 	String expectedTotal = "";
 	String name ="";
 	String creditCard ="";
+	String ListOfProducts = "//td[contains(text(),'Nokia lumia 1520')]";
 	By productListID = By.cssSelector("tbody#tbodyid tr.success td:nth-child(3)");
 	By placeOrder = By.cssSelector("[data-target=\"#orderModal\"]");
     By purchase = By.cssSelector("[onclick=\'purchaseOrder()\']");
@@ -60,6 +61,14 @@ public class DemoBlazeCartPage extends DemoBlazeGeneralPage{
     	Assert.assertTrue(_checkData.contains(expectedTotal));
     	Assert.assertTrue(_checkData.contains(name));
     	Assert.assertTrue(_checkData.contains(creditCard));
+    }
+    
+    public void CheckProducts(List<String> string) {
+    	String checkString="";
+    	for(String element : string) {
+    		checkString = "//td[contains(text(),"+element+")]";
+    		Assert.assertTrue(checkString.contains(element));
+    	}
     }
     
     
