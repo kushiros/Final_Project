@@ -1,13 +1,12 @@
 @tag
 Feature: addMoreProducts
-  As a user
+  As a user I am on "https://www.demoblaze.com/index.html"
   I want to be able to add two or more products to the cart and proceed with the purchase by placing the order.
 
 
 @BuyNElements
   Scenario Outline: buyNProducts
-    Given As a user I am on "https://www.demoblaze.com/index.html"
-    And I want to buy the following products:
+    Given I want to buy the following products:
       | ProductId   |
       | <ProductIds> |
     And I go to the Cart Page

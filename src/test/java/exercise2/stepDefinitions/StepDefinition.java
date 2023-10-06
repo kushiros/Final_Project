@@ -2,6 +2,7 @@ package exercise2.stepDefinitions;
 
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -23,17 +24,14 @@ public class StepDefinition {
 	DemoBlazeProductPage DemoblazeProductPage;
 	DemoBlazeCartPage DemoblazeCartPage;
 	
-	
-
-	@Given("As a user I am on {string}")
-	public void as_a_user_i_am_on(String string) throws IOException {
+	@Before
+	public void initializeTest() throws IOException{
 		webDriver = new SetWebDriver();
 		webDriver.getWebDriver().manage().window().maximize();
 		DemoblazeHomePage = new DemoBlazeHomePage(webDriver);
 		DemoblazeProductPage = new DemoBlazeProductPage(webDriver);
 		DemoblazeCartPage = new DemoBlazeCartPage(webDriver);
 	}
-
 
 
 	@Then("I go to the Cart Page")
@@ -61,7 +59,7 @@ public class StepDefinition {
 
 	@After
 	public void closeBrowser() {
-		webDriver.getWebDriver().quit();
+		webDriver.getWebDriver().close();
 	}
 
 	@When("I want to buy the following products:")
