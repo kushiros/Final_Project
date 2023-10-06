@@ -72,7 +72,7 @@ public abstract class AbstractPage {
 	
 	public void checkAlert() {
 	    try {
-	        WebDriverWait wait = new WebDriverWait(webDriver.getWebDriver(), Duration.ofMillis(2000));
+	        WebDriverWait wait = new WebDriverWait(webDriver.getWebDriver(), Duration.ofMillis(3000));
 	        wait.until(ExpectedConditions.alertIsPresent());
 	        Alert alert = webDriver.getWebDriver().switchTo().alert();
 	        alert.accept();

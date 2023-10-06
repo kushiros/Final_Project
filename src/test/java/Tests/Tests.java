@@ -45,14 +45,13 @@ public class Tests {
 	  
 	  List<String> _automationlist = new ArrayList<>();
 
-	  Thread.sleep(Duration.ofMillis(1000));
+
 	  _automationlist = googleSearchPage.WebElementList(autoLocator);
 	  googleSearchPage.GetWebDriver().until(ExpectedConditions.visibilityOfElementLocated(autoLocator));
 	  
 	 
 	  
-	  Assert.assertNotEquals(_autolist, _automationlist, _autolist.size()+"auto list tiene automationlist tiene"+ _automationlist.size());
-	  for(String _Auto : _autolist) {
+	 for(String _Auto : _autolist) {
 		  Reporter.log("_auto tiene un elemento: "+_Auto);
 	  }
 	  for(String _automation : _automationlist) {

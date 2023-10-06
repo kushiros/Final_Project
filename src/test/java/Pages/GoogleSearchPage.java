@@ -26,8 +26,10 @@ public class GoogleSearchPage extends AbstractPage {
 
 		WebElement _inputFieldElement = WaitElementByLocator(inputField);
 		if (_inputFieldElement != null) {
-			_inputFieldElement.clear();
-			_inputFieldElement.sendKeys(_string);
+			for(char c : _string.toCharArray()) {
+				WaitElementByLocator(inputField).sendKeys(String.valueOf(c));
+			}
+			
 
 		}
 	}

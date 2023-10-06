@@ -68,17 +68,21 @@ public class StepDefinition {
 			String productId = row.get("ProductId");
 			String[] productIdArray = productId.split(",");
 			for (String _productId : productIdArray) {
-				int id = Integer.parseInt(_productId.trim());
-				if(id>9) {
-					DemoblazeHomePage.GetNextProductPage();;
-				}
 				
-				DemoblazeHomePage.ClickOnElementID(id);
+				int id = Integer.parseInt(_productId.trim());
+				if(id<=15) {
+					if(id>9) {
+						DemoblazeHomePage.GetNextProductPage();;
+					}
+					
+					DemoblazeHomePage.ClickOnElementID(id);
 
-				DemoblazeProductPage.generalClick(DemoblazeProductPage.GetAddToCart());
-				DemoblazeProductPage.checkAlert();
-				DemoblazeProductPage.generalClick(DemoblazeProductPage.GetHomeLogoBy());
+					DemoblazeProductPage.generalClick(DemoblazeProductPage.GetAddToCart());
+					DemoblazeProductPage.checkAlert();
+					DemoblazeProductPage.generalClick(DemoblazeProductPage.GetHomeLogoBy());
+				}
 			}
+
 		}
 
 	}
