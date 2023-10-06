@@ -17,23 +17,24 @@ import chromedriver.SetWebDriver;
 
 public class StepDefinition {
 
-	SetWebDriver _webDriver;
-	DemoBlazeHomePage _DemoblazeHomePage;
-	DemoBlazeProductPage _DemoblazeProductPage;
-	DemoBlazeCartPage _DemoblazeCartPage;
+	SetWebDriver webDriver;
+	DemoBlazeHomePage DemoblazeHomePage;
+	DemoBlazeProductPage DemoblazeProductPage;
+	DemoBlazeCartPage DemoblazeCartPage;
 
 	@Given("As a user I am on {string}")
 	public void as_a_user_i_am_on(String string) throws IOException {
-		_webDriver = new SetWebDriver();
-		_DemoblazeHomePage = new DemoBlazeHomePage(_webDriver);
-		_DemoblazeProductPage = new DemoBlazeProductPage(_webDriver);
-		_DemoblazeCartPage = new DemoBlazeCartPage(_webDriver);
+		webDriver = new SetWebDriver();
+		webDriver.getWebDriver().manage().window().maximize();
+		DemoblazeHomePage = new DemoBlazeHomePage(webDriver);
+		DemoblazeProductPage = new DemoBlazeProductPage(webDriver);
+		DemoblazeCartPage = new DemoBlazeCartPage(webDriver);
 	}
 
 	@When("I click on the product with ID {string}")
 	public void i_click_on_the_product_with_id(String idString) {
 		int id = Integer.parseInt(idString);
-		_DemoblazeHomePage.ClickOnElementID(id);
+		DemoblazeHomePage.ClickOnElementID(id);
 	}
 
 	@Then("I go to the product details page")
@@ -43,35 +44,35 @@ public class StepDefinition {
 
 	@When("I click on the Add to Cart button")
 	public void i_click_on_the_button() {
-		_DemoblazeProductPage.generalClick(_DemoblazeProductPage.GetAddToCart());
-		_DemoblazeProductPage.checkAlert();
+		DemoblazeProductPage.generalClick(DemoblazeProductPage.GetAddToCart());
+		DemoblazeProductPage.checkAlert();
 	}
 
 	@Then("I go to the Cart Page")
 	public void i_go_to_the_cart_page() {
-		_DemoblazeProductPage.generalClick(_DemoblazeProductPage.GetCartBy());
+		DemoblazeProductPage.generalClick(DemoblazeProductPage.GetCartBy());
 	}
 
 	@When("I click on {string} and fill in the data {string} {string}:")
 	public void i_click_on_and_fill_in_the_data(String string, String name, String creditCard) {
-		_DemoblazeCartPage.generalClick(_DemoblazeCartPage.GetPlaceOrderBy());
-		_DemoblazeCartPage.SetName(name);
-		_DemoblazeCartPage.SetCreditCard(creditCard);
+		DemoblazeCartPage.generalClick(DemoblazeCartPage.GetPlaceOrderBy());
+		DemoblazeCartPage.SetName(name);
+		DemoblazeCartPage.SetCreditCard(creditCard);
 	}
 
 	@When("I click on {string}")
 	public void i_click_on(String string) {
-		_DemoblazeCartPage.generalClick(_DemoblazeCartPage.GetPurchaseBy());
+		DemoblazeCartPage.generalClick(DemoblazeCartPage.GetPurchaseBy());
 	}
 
 	@Then("I compare the data")
 	public void i_compare_the_data() {
-		_DemoblazeCartPage.checkData();
+		DemoblazeCartPage.checkData();
 	}
 
 	@After
 	public void closeBrowser() {
-		_webDriver.getWebDriver().quit();
+		webDriver.getWebDriver().quit();
 	}
 
 	@When("I want to buy the following products:")
@@ -80,14 +81,18 @@ public class StepDefinition {
 
 		for (Map<String, String> row : data) {
 			String productId = row.get("ProductId");
-			String[] productIdArray = productId.split(",\\s*");
+			String[] productIdArray = productId.split(",");
 			for (String _productId : productIdArray) {
 				int id = Integer.parseInt(_productId.trim());
-				_DemoblazeHomePage.ClickOnElementID(id);
+				if(id>9) {
+					DemoblazeHomePage.GetNextProductPage();;
+				}
+				
+				DemoblazeHomePage.ClickOnElementID(id);
 
-				_DemoblazeProductPage.generalClick(_DemoblazeProductPage.GetAddToCart());
-				_DemoblazeProductPage.checkAlert();
-				_DemoblazeProductPage.generalClick(_DemoblazeProductPage.GetHomeLogoBy());
+				DemoblazeProductPage.generalClick(DemoblazeProductPage.GetAddToCart());
+				DemoblazeProductPage.checkAlert();
+				DemoblazeProductPage.generalClick(DemoblazeProductPage.GetHomeLogoBy());
 			}
 		}
 

@@ -2,13 +2,19 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
     <line>
-      <![CDATA[_auto tiene un elemento: auto de milei]]>
-    </line>
-    <line>
       <![CDATA[_auto tiene un elemento: autos usados]]>
     </line>
     <line>
+      <![CDATA[_auto tiene un elemento: auto de milei]]>
+    </line>
+    <line>
       <![CDATA[_auto tiene un elemento: autos]]>
+    </line>
+    <line>
+      <![CDATA[_auto tiene un elemento: autos usados bahia blanca]]>
+    </line>
+    <line>
+      <![CDATA[_auto tiene un elemento: autos usados bahia]]>
     </line>
     <line>
       <![CDATA[_auto tiene un elemento: autoclasica 2023]]>
@@ -18,19 +24,13 @@
 Autódromo Óscar y Juan Gálvez · Buenos Aires]]>
     </line>
     <line>
-      <![CDATA[_auto tiene un elemento: autoblog]]>
+      <![CDATA[_auto tiene un elemento: autocad]]>
     </line>
     <line>
       <![CDATA[_auto tiene un elemento: autocosmos]]>
     </line>
     <line>
-      <![CDATA[_auto tiene un elemento: autocad]]>
-    </line>
-    <line>
-      <![CDATA[_auto tiene un elemento: Autodesk]]>
-    </line>
-    <line>
-      <![CDATA[_auto tiene un elemento: autocredito]]>
+      <![CDATA[_auto tiene un elemento: autoblog]]>
     </line>
     <line>
       <![CDATA[_automation tiene un elemento: Automation
@@ -67,25 +67,31 @@ Videojuego]]>
 Servicio de seguridad privada · San Martín, Provincia de Buenos Aires]]>
     </line>
   </reporter-output>
-  <suite started-at="2023-10-05T22:21:44 ART" name="Default suite" finished-at="2023-10-05T22:21:55 ART" duration-ms="11131">
+  <suite started-at="2023-10-06T08:50:53 ART" name="Default suite" finished-at="2023-10-06T08:51:05 ART" duration-ms="11245">
     <groups>
     </groups>
-    <test started-at="2023-10-05T22:21:44 ART" name="Default test" finished-at="2023-10-05T22:21:55 ART" duration-ms="11131">
+    <test started-at="2023-10-06T08:50:53 ART" name="Default test" finished-at="2023-10-06T08:51:05 ART" duration-ms="11245">
       <class name="Tests.Tests">
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:Tests.Tests@367ffa75]" started-at="2023-10-05T22:21:44 ART" name="beforeTest" finished-at="2023-10-05T22:21:47 ART" duration-ms="2290" status="PASS">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:Tests.Tests@55fe41ea]" started-at="2023-10-06T08:50:53 ART" name="beforeTest" finished-at="2023-10-06T08:50:56 ART" duration-ms="2112" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method signature="f()[pri:0, instance:Tests.Tests@367ffa75]" started-at="2023-10-05T22:21:47 ART" name="f" finished-at="2023-10-05T22:21:55 ART" duration-ms="8695" status="PASS">
+        <test-method signature="f()[pri:0, instance:Tests.Tests@55fe41ea]" started-at="2023-10-06T08:50:56 ART" name="f" finished-at="2023-10-06T08:51:05 ART" duration-ms="8975" status="PASS">
           <reporter-output>
-            <line>
-              <![CDATA[_auto tiene un elemento: auto de milei]]>
-            </line>
             <line>
               <![CDATA[_auto tiene un elemento: autos usados]]>
             </line>
             <line>
+              <![CDATA[_auto tiene un elemento: auto de milei]]>
+            </line>
+            <line>
               <![CDATA[_auto tiene un elemento: autos]]>
+            </line>
+            <line>
+              <![CDATA[_auto tiene un elemento: autos usados bahia blanca]]>
+            </line>
+            <line>
+              <![CDATA[_auto tiene un elemento: autos usados bahia]]>
             </line>
             <line>
               <![CDATA[_auto tiene un elemento: autoclasica 2023]]>
@@ -95,19 +101,13 @@ Servicio de seguridad privada · San Martín, Provincia de Buenos Aires]]>
 Autódromo Óscar y Juan Gálvez · Buenos Aires]]>
             </line>
             <line>
-              <![CDATA[_auto tiene un elemento: autoblog]]>
+              <![CDATA[_auto tiene un elemento: autocad]]>
             </line>
             <line>
               <![CDATA[_auto tiene un elemento: autocosmos]]>
             </line>
             <line>
-              <![CDATA[_auto tiene un elemento: autocad]]>
-            </line>
-            <line>
-              <![CDATA[_auto tiene un elemento: Autodesk]]>
-            </line>
-            <line>
-              <![CDATA[_auto tiene un elemento: autocredito]]>
+              <![CDATA[_auto tiene un elemento: autoblog]]>
             </line>
             <line>
               <![CDATA[_automation tiene un elemento: Automation
@@ -145,7 +145,7 @@ Servicio de seguridad privada · San Martín, Provincia de Buenos Aires]]>
             </line>
           </reporter-output>
         </test-method> <!-- f -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:Tests.Tests@367ffa75]" started-at="2023-10-05T22:21:55 ART" name="afterTest" finished-at="2023-10-05T22:21:55 ART" duration-ms="123" status="PASS">
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:Tests.Tests@55fe41ea]" started-at="2023-10-06T08:51:05 ART" name="afterTest" finished-at="2023-10-06T08:51:05 ART" duration-ms="128" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
