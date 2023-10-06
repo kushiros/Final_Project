@@ -4,9 +4,11 @@ import java.time.Duration;
 
 import java.util.function.Function;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -66,6 +68,17 @@ public abstract class AbstractPage {
 	public void generalClick(By _by) {
 		WebElement _generalBy = WaitElementByLocator(_by);
 		_generalBy.click();
+	}
+	
+	public void checkAlert() {
+	    try {
+	        WebDriverWait wait = new WebDriverWait(webDriver.getWebDriver(), Duration.ofMillis(2000));
+	        wait.until(ExpectedConditions.alertIsPresent());
+	        Alert alert = webDriver.getWebDriver().switchTo().alert();
+	        alert.accept();
+	    } catch (Exception e) {
+	        //exception handling
+	    }
 	}
 	
 	

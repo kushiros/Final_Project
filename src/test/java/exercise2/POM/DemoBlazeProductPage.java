@@ -6,19 +6,17 @@ import org.openqa.selenium.WebElement;
 
 import chromedriver.SetWebDriver;
 
-public class DemoBlazeProductPage extends DemoBlazeGeneralPage{
-	By _AddToCartXPath = By.xpath("//*[@id=\'tbodyid\']/div[2]/div/a");
+public class DemoBlazeProductPage extends DemoBlazeGeneralPage {
+	By addToCart = By.cssSelector("[class=\"btn btn-success btn-lg\"]");
+
+	public DemoBlazeProductPage(SetWebDriver driver) {
+		super(driver);
+	}
 
 	
-	public DemoBlazeProductPage(SetWebDriver driver) {
-        super(driver);
-    }
-    public void OnClickElementAddToCart() {
-    	WebElement _OnClickElementAddToCart = WaitElementByLocator(_AddToCartXPath);
-	    
-	    if (_OnClickElementAddToCart != null) {
-	    	_OnClickElementAddToCart.click();
-	    }
-    }
+
+	public By GetAddToCart() {
+		return addToCart;
+	}
 
 }

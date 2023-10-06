@@ -7,9 +7,9 @@ import chromedriver.SetWebDriver;
 
 public class DemoBlazeHomePage extends DemoBlazeGeneralPage {
 	String BlazeURL = "https://www.demoblaze.com/index.html";
-	By _ClickOnMacBookXPath = By.xpath("//*[@id='tbodyid']/div[6]/div/a/img");
-    By _ClickOnNotebook = By.cssSelector("a#itemc[onclick=\"byCat('notebook')\"]");
-    By _BannerElement = By.cssSelector("img.d-block[src=\"Samsung1.jpg\"]");
+    By ClickOnNotebook = By.cssSelector("a#itemc[onclick=\"byCat('notebook')\"]");
+    By clickOnIdProduct = By.cssSelector("[href=\"prod.html?idp_=15\"]");
+    int idProduct = 1;
 	
 	public DemoBlazeHomePage(SetWebDriver driver) {
 		super(driver);
@@ -17,20 +17,24 @@ public class DemoBlazeHomePage extends DemoBlazeGeneralPage {
 	}
     public void OnClickNoteBookTest() {
     	
-        WebElement _OnClickElement = WaitElementByLocator(_ClickOnNotebook);
-        if (_OnClickElement != null) {
-            _OnClickElement.click();
+        WebElement _onClickElement = WaitElementByLocator(ClickOnNotebook);
+        if (_onClickElement != null) {
+            _onClickElement.click();
         }
         
         
     }
-    public void OnClickElementMacBookPro() {
-    	WebElement _OnClickElementMacbookPro =  WaitElementByLocator(_ClickOnMacBookXPath);
-        
-	    if (_OnClickElementMacbookPro != null) {
-	    	_OnClickElementMacbookPro.click();
-	    }
-	    
+    
+    public void ClickOnElementID(int _id) {
+    	idProduct=_id;
+    	String _newByID = "[href=\'prod.html?idp_="+_id+"\']";
+    	By _newID = By.cssSelector(_newByID);
+    	WebElement _onClickElement = WaitElementByLocator(_newID);
+    	_onClickElement.click();
+    }
+    
+    public int getIdProduct() {
+    	return idProduct;
     }
 	
 }

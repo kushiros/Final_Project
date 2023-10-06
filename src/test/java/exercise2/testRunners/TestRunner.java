@@ -6,13 +6,11 @@ import io.cucumber.junit.CucumberOptions;
 
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features={"src/test/java/feature"},
-glue = {"feature"},
-plugin = { "progress" },
-monochrome = true
+@CucumberOptions(
+    features = {"C:/Testing/Final_Project/src/test/java/exercise2/features"},
+    glue = {"exercise2.stepDefinitions"}, // Ruta del paquete de definiciones de pasos
+    plugin = {"progress"},
+    monochrome = true
 )
-public class TestRunner{
-
-
-
+public class TestRunner {
 }

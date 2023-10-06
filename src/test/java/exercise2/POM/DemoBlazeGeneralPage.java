@@ -5,7 +5,8 @@ import org.openqa.selenium.By;
 import chromedriver.SetWebDriver;
 
 public class DemoBlazeGeneralPage extends AbstractPage{
-	By Cart = By.cssSelector("[id=\"cartur\"]");
+	By homeLogo = By.cssSelector("[href=\"index.html\"]");
+	By cart = By.cssSelector("[id=\"cartur\"]");
 	public DemoBlazeGeneralPage(SetWebDriver driver) {
 		super(driver);
 		// TODO Auto-generated constructor stub
@@ -13,7 +14,11 @@ public class DemoBlazeGeneralPage extends AbstractPage{
 	
 	
     public By GetCartBy() {
-    	return Cart;
+    	return cart;
+    }
+    
+    public By GetHomeLogoBy() {
+    	return homeLogo;
     }
 
 }
