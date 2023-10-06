@@ -66,7 +66,7 @@ public class StepDefinition {
 
 	@Then("I compare the data")
 	public void i_compare_the_data() {
-
+		_DemoblazeCartPage.checkData();
 	}
 
 	@After
