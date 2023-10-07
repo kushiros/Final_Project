@@ -64,10 +64,12 @@ public class DemoBlazeCartPage extends DemoBlazeGeneralPage{
     }
     
     public void CheckProducts(List<String> string) {
-    	String checkString="";
+    	String checkString="//td[contains(text(),'Sony vaio i7')]";
     	for(String element : string) {
-    		checkString = "//td[contains(text(),"+element+")]";
-    		Assert.assertTrue(checkString.contains(element));
+    		checkString = "//td[contains(text(),'"+element+"')]";
+    		By xpathProduct = By.xpath(checkString);
+    		WebElement ElementProduct = WaitElementByLocator(xpathProduct);
+    		Assert.assertTrue(ElementProduct.getText().contains(element));
     	}
     }
     

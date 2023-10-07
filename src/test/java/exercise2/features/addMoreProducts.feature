@@ -16,6 +16,7 @@ Feature: addMoreProducts
 
     Examples:
       | ProductIds   			| name       | credit_card      |
+      | 2|juan|123|
       | 10,5,7,9,10,12,2   | manolo     | 123131231123     |
       | 2,4,6,8 					| ricardo    | maiame           |
       | 7,5,3,7,2 			  | michi miau | miau             |
